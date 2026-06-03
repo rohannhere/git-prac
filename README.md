@@ -1,5 +1,5 @@
 # git-prac
 
 ```bash
-Just Check It 
+It's done
 ```

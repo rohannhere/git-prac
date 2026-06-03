@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<body style="background: #222; text-align: center; color: white; font-family: sans-serif;">
+  <h2>Score: <span id="s">0</span></h2>
+  <button id="b" style="position: absolute; padding: 15px; background: #00ff88; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">CATCH ME</button>
+  
+  <script>
+    let score = 0, speed = 2000;
+    const move = () => {
+      b.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+      b.style.top = Math.random() * (window.innerHeight - 150) + 100 + 'px';
+    };
+    let timer = setInterval(move, speed);
+    b.onclick = () => {
+      s.innerText = ++score;
+      clearInterval(timer);
+      timer = setInterval(move, Math.max(400, speed -= 150));
+      move();
+    };
+    move();
+  </script>
+</body>
